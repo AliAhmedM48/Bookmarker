@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+
+    <!-- * meta tag | open graph -->
+    <!-- #region Open Graph Tag -->
+    <!-- ! Facebook will use open graph to display information if your content is shared. -->
+    <!-- ! Whatsapp doesn't support picture with a size greater than 300KB. -->
+
+    <meta property="og:url" content="www.MrAli.com" />
+    <!-- <meta property="og:type" content="Personal Portfolio Website" /> -->
+
+    <meta property="og:title" content="MrAli | Energized by engineering, passionate about web development." />
+    <meta property="og:site_name" content="MrAli" />
+
+    <meta property="og:description"
+        content="Fullstack Developer - Building websites from scratch using popular tools and languages." />
+    <meta property="og:image" content="https://i.ibb.co/5M70rmD/poster.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Never Give Up!" />
+
+    <!-- <meta property="og:video"
+        content="https://aliahmedm48.github.io/html-task1/videos/fun.mp4?namePrefix=&fname=&lname=&email=&password=&birthday=&birthcountry=%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9&phone=&linkedinURL=&from=07%3A00%3A00&to=15%3A00%3A00&from=07%3A00%3A00&to=15%3A00%3A00&TimeManagement=70&Communication=50&Problem-solving=70&color=%23000000&SharingInfo=&submit=Submit+without+HTML+validation" />
+    <meta property="og:video:type" content="video/mp4" />
+
+    <meta property="og:video:width" content="640" />
+    <meta property="og:video:height" content="360" /> -->
+    <!-- #endregion -->
+    <!-- * meta tag | charset-->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="user-select-none">
+        <div class="container-lg">
+            <div class="row g-4">
+                <div class="col-lg-6 d-flex justify-content-between">
+                    <form class="mx-auto mt-4 w-75">
+                        <h1 class="text-center fw-bold">Bookmark</h1>
+                        <h2 class="text-center h6 mb-3">❤ Bookmark your favorite sites ❤</h2>
+                        <div class="overflow-hidden">
+                            <label for="siteName">Site Name</label>
+                            <input class="form-control" type="text" name="siteName" id="siteName"
+                                placeholder="Bookmark Name" autocomplete="off">
+                            <div id="feedbackNameInput"></div>
+                        </div>
+                        <div>
+                            <label for="siteUrl">Site URL</label>
+                            <input class="form-control" type="url" name="siteUrl" id="siteUrl" placeholder="Website URL"
+                                autocomplete="off">
+                            <div id="feedbackUrlInput"></div>
+                        </div>
+                        <div class="mx-auto text-center">
+                            <button class="btn btn-success my-3 me-2" type="button" name="submit" autofocus
+                                id="submit">Submit</button>
+                            <button class="btn btn-danger my-3" type="button" name="delete" id="deleteTable">Delete
+                                Table</button>
+                        </div>
+                        <input class="form-control w-75 m-auto" type="search" name="search" id="search"
+                            placeholder="Search by name..." autocomplete="off">
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Index</th>
+                                    <th>Website Name</th>
+                                    <th>Visit</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                    <!-- <th>Actions</th> -->
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- <tr> -->
+
+                                <!-- <td>Index</td> -->
+                                <!-- <td>Website Name</td> -->
+                                <!-- <td><button class="btn btn-outline-dark">Visit</button></td> -->
+                                <!-- <td><button class="btn btn-danger">Delete</button></td> -->
+                                <!-- </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
