@@ -33,8 +33,10 @@ function createRow(book, index, searchTerm) {
                 ${
                   searchTerm
                     ? book.name.replace(
-                        searchTerm,
-                        `<span class="fw-bold text-danger">${searchTerm}</span>`
+                        searchTerm.toLowerCase() || searchTerm.toUpperCase(),
+                        `<span class="fw-bold text-danger">${
+                          searchTerm.toLowerCase() || searchTerm.toUpperCase()
+                        }</span>`
                       )
                     : book.name
                 }
