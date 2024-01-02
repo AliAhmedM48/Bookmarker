@@ -24,11 +24,22 @@ function setData() {
   return localStorage.setItem("data", JSON.stringify(bookList));
 }
 
-function createRow(book, index) {
+function createRow(book, index, searchTerm) {
   return `
             <tr>
                 <td>${index + 1}</td>
-                <td id="tdBookName">${book.name}</td>
+                <td id="tdBookName">
+                
+                ${
+                  searchTerm
+                    ? book.name.replace(
+                        searchTerm,
+                        `<span class="fw-bold text-danger">${searchTerm}</span>`
+                      )
+                    : book.name
+                }
+                
+                </td>
                 <td id="tdBookUrl">
                   <a 
                     class="btn btn-outline-dark" 
@@ -206,7 +217,7 @@ function searchFunction() {
   var FoundFlag = 0;
   for (var i = 0; i < bookList.length; i++) {
     if (bookList[i].name.toLowerCase().includes(term.toLowerCase())) {
-      htmlContent += createRow(bookList[i], i);
+      htmlContent += createRow(bookList[i], i, term);
       FoundFlag = 1;
     }
   }
@@ -238,8 +249,7 @@ function validatedName(inputTag, feedbackTag) {
 }
 
 function validatedUrl(inputTag, feedbackTag) {
-  var urlRegex =
-    /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+  var urlRegex = /^(https?|ftp):\/\/[^\s\/$.?#].[^\s]*$/;
   if (urlRegex.test(inputTag.value)) {
     feedbackTag.innerHTML = "Looks good!";
     inputTag.classList.replace("is-invalid", "is-valid");
